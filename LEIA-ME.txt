@@ -1,0 +1,22 @@
+WILDLIFE — RELATÓRIO WEB (VERSÃO CORRIGIDA)
+
+OPÇÃO MAIS FÁCIL
+- Abra relatorio_completo_offline.html com dois cliques.
+- Esse arquivo tem HTML, CSS e JavaScript juntos, então não depende das outras pastas para funcionar.
+
+OPÇÃO PARA EDITAR O SITE EM ARQUIVOS SEPARADOS
+- Abra index.html. Deixe index.html, style.css e script.js juntos na MESMA pasta.
+- A pasta assets é opcional, para prints reais do app.
+
+COMO USAR
+- Clique em "Editar identificação" para informar seus dados acadêmicos.
+- Adicione prints na área de evidências, se desejar.
+- Marque somente os testes efetivamente realizados.
+- Use "Exportar PDF" para imprimir/salvar como PDF. Ative a impressão de fundos para preservar o tema escuro, caso deseje.
+
+IMPORTANTE
+- Os dados preenchidos pelo navegador ficam guardados localmente e não são incluídos automaticamente ao compartilhar o site.
+- Para entregar o relatório já preenchido, exporte o PDF ou edite os textos diretamente no HTML.
+- Se distribuir o site com prints, salve as imagens em assets/inicio.png, assets/gastos.png e assets/avaliacoes.png.
+- A ilustração da capa é ilustrativa, não é um print do app.
+- Essa versão corrige a incompatibilidade entre HTML e CSS presente no pacote anterior.

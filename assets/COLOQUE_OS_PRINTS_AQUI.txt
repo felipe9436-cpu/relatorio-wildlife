@@ -1,0 +1,4 @@
+Adicione os prints reais do app com estes nomes:
+inicio.png
+gastos.png
+avaliacoes.png

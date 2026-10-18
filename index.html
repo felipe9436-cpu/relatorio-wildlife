@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1425">
+  <meta name="description" content="Relatório de desenvolvimento do WildLife, aplicativo de planejamento de viagens construído com Flutter e Supabase.">
+  <title>WildLife — Relatório de desenvolvimento</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="reading-track" id="readingTrack" aria-hidden="true"></div>
+  <a class="skip-link" href="#conteudo">Ir para o relatório</a>
+
+  <div class="site-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Menu do relatório">
+      <a href="#inicio" class="brand" aria-label="WildLife — início">
+        <span class="brand-symbol" aria-hidden="true">W<span class="brand-spark">✦</span></span>
+        <span class="brand-copy"><strong>WILDLIFE</strong><small>TRAVEL GO / 2026</small></span>
+      </a>
+
+      <div class="sidebar-group">
+        <span class="tiny-label">RELATÓRIO DE PROJETO</span>
+        <nav class="side-nav" aria-label="Navegação principal">
+          <a class="nav-link active" href="#inicio"><span class="nav-index">00</span><span>Apresentação</span></a>
+          <a class="nav-link" href="#contexto"><span class="nav-index">01</span><span>De onde veio</span></a>
+          <a class="nav-link" href="#construcao"><span class="nav-index">02</span><span>Como foi feito</span></a>
+          <a class="nav-link" href="#funcionalidades"><span class="nav-index">03</span><span>O que o app faz</span></a>
+          <a class="nav-link" href="#arquitetura"><span class="nav-index">04</span><span>Por dentro do código</span></a>
+          <a class="nav-link" href="#banco"><span class="nav-index">05</span><span>Dados e segurança</span></a>
+          <a class="nav-link" href="#identidade"><span class="nav-index">06</span><span>Identidade visual</span></a>
+          <a class="nav-link" href="#desafios"><span class="nav-index">07</span><span>Desafios do caminho</span></a>
+          <a class="nav-link" href="#validacao"><span class="nav-index">08</span><span>Testes e validação</span></a>
+          <a class="nav-link" href="#fechamento"><span class="nav-index">09</span><span>O que fica</span></a>
+        </nav>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="side-note"><span class="signal"></span><span>Flutter + Supabase<br><small>Projeto acadêmico / AV1</small></span></div>
+        <div class="sidebar-line"></div>
+        <span class="sidebar-foot">Planejar é parte da viagem.</span>
+      </div>
+    </aside>
+
+    <div class="main-shell">
+      <header class="toolbar">
+        <button class="icon-button menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-controls="sidebar" aria-expanded="false"><span></span><span></span><span></span></button>
+        <span class="breadcrumb">WILDLIFE <span>/</span> DOCUMENTAÇÃO <span>/</span> AV1</span>
+        <div class="toolbar-actions">
+          <span class="toolbar-status"><i></i> RELATÓRIO WEB</span>
+          <button type="button" class="button button-outline button-small" id="printTop" title="Imprimir ou salvar como PDF"><span aria-hidden="true">↗</span> Exportar PDF</button>
+        </div>
+      </header>
+
+      <main id="conteudo">
+        <section class="hero section" id="inicio" data-section>
+          <div class="hero-grid">
+            <div class="hero-main">
+              <div class="eyebrow"><span class="eyebrow-line"></span> PROJETO DE DESENVOLVIMENTO MOBILE <span class="eyebrow-suffix">/ 2026</span></div>
+              <h1>Uma viagem começa<br>bem antes de <em>partir.</em></h1>
+              <p class="hero-description">WildLife é um aplicativo pensado para juntar o que normalmente fica espalhado: destinos, reservas, roteiros, despesas e pequenos detalhes que fazem diferença quando chega a hora de viajar.</p>
+              <div class="hero-actions">
+                <a class="button button-gold" href="#contexto">Ler o projeto <span aria-hidden="true">↘</span></a>
+                <button class="button button-quiet" id="editCredits" type="button">Editar identificação <span aria-hidden="true">↗</span></button>
+              </div>
+              <div class="hero-meta">
+                <div><span class="meta-label">DESENVOLVIMENTO</span><strong>Flutter / Dart</strong></div>
+                <div><span class="meta-label">BACKEND</span><strong>Supabase</strong></div>
+                <div><span class="meta-label">PROPOSTA</span><strong>Planejamento de viagens</strong></div>
+              </div>
+            </div>
+            <div class="hero-art" aria-label="Ilustração estilizada da interface do aplicativo WildLife">
+              <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+              <span class="art-cross art-cross-a">+</span><span class="art-cross art-cross-b">+</span>
+              <div class="destination-tag">DESTINO <span>01 / PRÓXIMA PARADA</span></div>
+              <div class="phone-frame">
+                <div class="phone-top"><span class="phone-notch"></span><span class="phone-clock">9:41</span></div>
+                <div class="phone-brand">WildLife <span>✦</span></div>
+                <p class="phone-kicker">SUA PRÓXIMA AVENTURA</p>
+                <div class="phone-title">O mundo<br>te espera<span>.</span></div>
+                <div class="mini-journey"><span class="mini-journey-tag">MINHA VIAGEM</span><span class="mini-plane">✈</span><strong>Rumo ao próximo destino</strong><small>Organize cada detalhe em um só lugar</small><div class="mini-progress"><span></span></div></div>
+                <div class="mini-modules"><div><span>⌖</span><small>Destinos</small></div><div><span>◷</span><small>Roteiro</small></div><div><span>◈</span><small>Gastos</small></div></div>
+                <div class="mini-bottom"><span>●</span><span>○</span><span>○</span><span>○</span></div>
+              </div>
+              <span class="art-caption">VISUAL ILUSTRATIVO DA IDENTIDADE DO APP — NÃO É UMA CAPTURA DE TELA</span>
+            </div>
+          </div>
+          <div class="hero-bottom-strip"><span>01 — IDEIA</span><span>02 — CONSTRUÇÃO</span><span>03 — INTEGRAÇÃO</span><span>04 — APRENDIZADO</span></div>
+        </section>
+
+        <div class="reading-content">
+          <section class="section chapter chapter-first" id="contexto" data-section>
+            <div class="chapter-heading"><span class="chapter-num">01 / CONTEXTO</span><span class="chapter-rule"></span><span class="chapter-type">O PONTO DE PARTIDA</span></div>
+            <div class="chapter-split"><div><h2>Por que criar<br><i>mais um</i> app de viagem?</h2></div><div class="prose"><p>Porque, na prática, planejar uma viagem costuma virar uma coleção de informações soltas. Uma reserva está no e-mail, o endereço de um passeio está salvo em outro aplicativo, os gastos ficam em uma anotação e a lista do que falta levar, em algum lugar do celular.</p><p>Foi a partir desse problema simples que nasceu o WildLife. A ideia não era desenvolver um sistema complicado, mas uma ferramenta que reunisse as etapas do planejamento de maneira clara. Cada viagem teria seu próprio espaço, e as informações ficariam associadas à viagem certa.</p><p>O projeto foi desenvolvido em Flutter como parte de uma atividade acadêmica, mas a proposta sempre foi fazer uma interface com aparência e comportamento de aplicativo real: fácil de entender, organizada e preparada para receber dados persistentes.</p></div></div>
+            <div class="statement"><span class="statement-mark">“</span><p>O objetivo não é decidir a viagem por alguém. É tirar a parte bagunçada do caminho para que a pessoa consiga aproveitar melhor o planejamento.</p><span class="statement-credit">A IDEIA CENTRAL DO WILDLIFE</span></div>
+          </section>
+
+          <section class="section chapter" id="construcao" data-section>
+            <div class="chapter-heading"><span class="chapter-num">02 / DESENVOLVIMENTO</span><span class="chapter-rule"></span><span class="chapter-type">DO RASCUNHO AO APP</span></div>
+            <div class="chapter-split"><div><h2>Primeiro fazer<br>sentido. Depois,<br><i>fazer funcionar.</i></h2></div><div class="prose"><p>O desenvolvimento começou pela estrutura das telas e dos modelos. Antes de conectar qualquer serviço externo, foi importante definir como uma viagem seria representada e o que cada área do aplicativo precisaria mostrar.</p><p>Com a navegação e os componentes organizados, a etapa seguinte foi levar os registros para o Supabase. Isso mudou bastante a experiência: dados que antes estavam apenas na memória do app passaram a ser carregados e salvos em um banco, vinculados à conta e à viagem selecionada.</p><p>Ao longo do processo também foi necessário revisar estados de carregamento, mensagens de erro, troca entre viagens e o ciclo de vida de alguns widgets. São detalhes que nem sempre aparecem em uma apresentação, mas influenciam diretamente a sensação de estabilidade.</p></div></div>
+            <div class="process-line" aria-label="Etapas de desenvolvimento">
+              <div class="process-step"><span class="process-number">01</span><span class="process-icon">⌗</span><strong>Estrutura</strong><p>Organização de telas, modelos e navegação.</p></div>
+              <div class="process-step"><span class="process-number">02</span><span class="process-icon">◧</span><strong>Interface</strong><p>Componentes, hierarquia visual e adaptação ao tamanho de tela.</p></div>
+              <div class="process-step"><span class="process-number">03</span><span class="process-icon">⇄</span><strong>Integração</strong><p>Autenticação e operações de banco de dados com Supabase.</p></div>
+              <div class="process-step"><span class="process-number">04</span><span class="process-icon">✓</span><strong>Refinamento</strong><p>Revisão de fluxos, carregamento e tratamento de erros.</p></div>
+            </div>
+            <div class="tech-band"><div class="tech-band-intro"><span class="tiny-label">FERRAMENTAS</span><strong>Escolhas que sustentam o projeto.</strong></div><div><span class="tech-monogram">F</span><strong>Flutter</strong><small>Interface multiplataforma</small></div><div><span class="tech-monogram">D</span><strong>Dart</strong><small>Lógica e modelos</small></div><div><span class="tech-monogram">S</span><strong>Supabase</strong><small>Auth + PostgreSQL</small></div><div><span class="tech-monogram">A</span><strong>Android Studio</strong><small>Desenvolvimento e execução</small></div></div>
+          </section>
+
+          <section class="section chapter" id="funcionalidades" data-section>
+            <div class="chapter-heading"><span class="chapter-num">03 / FUNCIONALIDADES</span><span class="chapter-rule"></span><span class="chapter-type">O QUE FOI CONSTRUÍDO</span></div>
+            <div class="section-intro"><div><h2>Cada parte tem<br>seu <i>lugar.</i></h2></div><p>As telas foram separadas por assunto, mas fazem parte do mesmo fluxo. O ponto de referência é sempre a viagem ativa, escolhida na tela inicial.</p></div>
+            <div class="feature-grid">
+              <article class="feature-card feature-card-wide"><span class="feature-top"><span class="feature-no">01</span><span class="feature-glyph">✦</span></span><h3>Início & viagens</h3><p>É o centro do aplicativo. Permite criar, selecionar, editar e excluir viagens, além de organizar o acesso às outras funcionalidades.</p><span class="feature-label">O PONTO DE PARTIDA</span></article>
+              <article class="feature-card"><span class="feature-top"><span class="feature-no">02</span><span class="feature-glyph">⌖</span></span><h3>Destinos</h3><p>Registra os lugares que fazem parte do planejamento de cada viagem.</p><span class="feature-label">LUGARES</span></article>
+              <article class="feature-card"><span class="feature-top"><span class="feature-no">03</span><span class="feature-glyph">↗</span></span><h3>Roteiro</h3><p>Organiza as atividades e etapas do percurso de forma mais fácil de acompanhar.</p><span class="feature-label">ORGANIZAÇÃO</span></article>
+              <article class="feature-card"><span class="feature-top"><span class="feature-no">04</span><span class="feature-glyph">▣</span></span><h3>Hospedagem</h3><p>Mantém reunidas as informações de estadia e reservas relacionadas à viagem.</p><span class="feature-label">ESTADIA</span></article>
+              <article class="feature-card"><span class="feature-top"><span class="feature-no">05</span><span class="feature-glyph">◈</span></span><h3>Gastos</h3><p>Permite registrar despesas por categoria e comparar o total gasto com o orçamento definido.</p><span class="feature-label">FINANÇAS</span></article>
+              <article class="feature-card"><span class="feature-top"><span class="feature-no">06</span><span class="feature-glyph">☑</span></span><h3>Checklist</h3><p>Ajuda a lembrar documentos, mala, compras e tarefas, mostrando o que já foi concluído.</p><span class="feature-label">PREPARAÇÃO</span></article>
+              <article class="feature-card"><span class="feature-top"><span class="feature-no">07</span><span class="feature-glyph">★</span></span><h3>Avaliações</h3><p>Registra notas de uma a cinco estrelas, comentários e experiências com locais ou serviços.</p><span class="feature-label">EXPERIÊNCIAS</span></article>
+              <article class="feature-card feature-card-auth"><span class="feature-top"><span class="feature-no">+</span><span class="feature-glyph">↳</span></span><h3>Acesso à conta</h3><p>Login, cadastro, recuperação de senha e saída da sessão completam a experiência.</p><span class="feature-label">AUTENTICAÇÃO</span></article>
+            </div>
+          </section>
+
+          <section class="section chapter" id="arquitetura" data-section>
+            <div class="chapter-heading"><span class="chapter-num">04 / ORGANIZAÇÃO DO CÓDIGO</span><span class="chapter-rule"></span><span class="chapter-type">BASTIDORES</span></div>
+            <div class="chapter-split"><div><h2>O código também<br>precisa ser <i>legível.</i></h2></div><div class="prose"><p>Uma das decisões do projeto foi não concentrar tudo em um arquivo. As telas cuidam da apresentação e da interação; os modelos representam os dados; os serviços fazem a ponte com funcionalidades de armazenamento e autenticação.</p><p>Os widgets reutilizáveis ajudam a manter a consistência de cards e elementos visuais. Já a pasta de tema concentra cores e estilos. Essa divisão facilita encontrar um problema e alterar uma parte sem precisar percorrer o aplicativo inteiro.</p></div></div>
+            <div class="architecture-grid"><div class="code-browser"><div class="code-window-head"><div class="window-dots"><i></i><i></i><i></i></div><span>ESTRUTURA / LIB</span><button type="button" class="text-action" id="copyStructure">Copiar ↗</button></div><pre id="structureText"><code>lib/
+├── main.dart
+├── models/
+│   ├── viagem.dart
+│   ├── destino.dart
+│   ├── roteiro.dart
+│   ├── hospedagem.dart
+│   ├── gasto.dart
+│   ├── checklist_item.dart
+│   └── avaliacao.dart
+├── screens/
+│   ├── home_screen.dart
+│   ├── destinos_screen.dart
+│   ├── roteiro_screen.dart
+│   ├── hospedagem_screen.dart
+│   ├── gastos_screen.dart
+│   ├── checklist_screen.dart
+│   ├── avaliacao_screen.dart
+│   ├── login_screen.dart
+│   ├── cadastro_screen.dart
+│   └── recuperar_senha_screen.dart
+├── services/
+│   ├── storage_service.dart
+│   ├── auth_service.dart
+│   └── places_service.dart
+├── widgets/
+└── theme/</code></pre></div><div class="architecture-notes"><div><span class="architecture-dot">01</span><h3>Models</h3><p>Definem os campos e as conversões dos registros, como <code>toMap()</code> e <code>fromMap()</code>.</p></div><div><span class="architecture-dot">02</span><h3>Screens</h3><p>Reúnem os fluxos, formulários, filtros e o estado de cada página.</p></div><div><span class="architecture-dot">03</span><h3>Services</h3><p>Encapsulam responsabilidades como autenticação e operações de armazenamento.</p></div><div><span class="architecture-dot">04</span><h3>Widgets & theme</h3><p>Compartilham componentes e estabelecem a linguagem visual do aplicativo.</p></div></div></div>
+          </section>
+
+          <section class="section chapter" id="banco" data-section>
+            <div class="chapter-heading"><span class="chapter-num">05 / SUPABASE</span><span class="chapter-rule"></span><span class="chapter-type">PERSISTÊNCIA E ACESSO</span></div>
+            <div class="section-intro"><div><h2>O dado precisa<br>ter um <i>dono.</i></h2></div><p>Conectar o aplicativo ao banco foi mais do que trocar listas locais por tabelas: foi pensar em como cada registro se relaciona com uma viagem e com a conta de quem o criou.</p></div>
+            <div class="database-layout"><div class="db-diagram"><div class="db-node db-user"><span class="db-node-title">AUTH / USUÁRIO</span><strong>auth.users</strong><small>Identidade da conta</small></div><div class="db-connector"><span></span><i>1 : N</i><span></span></div><div class="db-node db-trip"><span class="db-node-title">ENTIDADE CENTRAL</span><strong>viagens</strong><small>id · usuario_id · dados da viagem</small></div><div class="db-connector"><span></span><i>1 : N</i><span></span></div><div class="db-tables"><div>destinos</div><div>roteiro</div><div>hospedagens</div><div>gastos</div><div>checklist_itens</div><div>avaliacoes</div></div><span class="diagram-caption">ESQUEMA CONCEITUAL — REPRESENTA OS VÍNCULOS PRINCIPAIS DO PROJETO</span></div><div class="db-explanation"><div class="db-explanation-item"><span>01 / AUTENTICAÇÃO</span><h3>Quem está usando?</h3><p>O Supabase Auth cuida da sessão. A identidade autenticada serve de referência para permitir o acesso aos registros de cada pessoa.</p></div><div class="db-explanation-item"><span>02 / RELACIONAMENTOS</span><h3>De qual viagem é?</h3><p>Cada registro das áreas internas utiliza um identificador de viagem (<code>viagemId</code>) para manter as informações no contexto certo.</p></div><div class="db-explanation-item"><span>03 / PERMISSÕES</span><h3>Quem pode acessar?</h3><p>As políticas de <em>Row Level Security</em> (RLS) são projetadas para limitar leituras e alterações aos dados pertencentes ao usuário autenticado.</p></div></div></div>
+            <div class="technical-note"><span class="technical-label">DETALHE DE IMPLEMENTAÇÃO</span><p>Os modelos Dart usam métodos como <code>toMap()</code> e <code>fromMap()</code> para converter os objetos em dados enviados ou recebidos pelo Supabase. Nas tabelas associadas a viagens, foi mantido o campo <code>"viagemId"</code>, com a mesma grafia usada pelo aplicativo.</p></div>
+          </section>
+
+          <section class="section chapter" id="identidade" data-section>
+            <div class="chapter-heading"><span class="chapter-num">06 / IDENTIDADE VISUAL</span><span class="chapter-rule"></span><span class="chapter-type">UMA CARA PRÓPRIA</span></div>
+            <div class="chapter-split"><div><h2>Discreto, escuro<br>e com um pouco<br>de <i>brilho.</i></h2></div><div class="prose"><p>A interface foi construída com uma base azul-marinho, superfícies em tons próximos do fundo e dourado nos pontos que precisam chamar a atenção. A ideia é trazer uma sensação de organização sem deixar o aplicativo com aparência fria.</p><p>Os títulos têm peso maior para marcar a hierarquia. Os ícones são simples, e os cards agrupam informações sem exigir que a pessoa descubra onde cada função está. A mesma lógica foi trazida para este relatório web.</p></div></div>
+            <div class="palette"><div class="swatch swatch-navy"><span>01</span><strong>AZUL-NOITE</strong><small>Base e profundidade</small></div><div class="swatch swatch-surface"><span>02</span><strong>SUPERFÍCIE</strong><small>Cards e formulários</small></div><div class="swatch swatch-gold"><span>03</span><strong>DOURADO</strong><small>Ação e destaque</small></div><div class="swatch swatch-blue"><span>04</span><strong>AZUL-FRIO</strong><small>Apoio e contraste</small></div><div class="swatch swatch-cream"><span>05</span><strong>TEXTO CLARO</strong><small>Leitura e hierarquia</small></div></div>
+            <p class="micro-note">As cores acima são uma adaptação para o relatório web, seguindo a identidade visual do aplicativo. Os valores exatos do tema Flutter podem ser consultados em <code>lib/theme/app_colors.dart</code>.</p>
+            <div class="identity-showcase"><div><span class="tiny-label">O PRINCÍPIO</span><h3>Não é só sobre ficar bonito.</h3><p>Uma tela bem organizada também evita erros: deixa visível qual viagem está ativa, separa ações principais de ações secundárias e ajuda a encontrar informações sem esforço.</p></div><div class="identity-example"><span class="example-kicker">ELEMENTOS RECORRENTES</span><div class="example-head"><span class="example-icon">✈</span><div><strong>Minha próxima viagem</strong><small>Detalhes reunidos em um só lugar</small></div></div><div class="example-actions"><span class="example-primary">Continuar planejamento <b>↗</b></span><span class="example-secondary">Ver detalhes</span></div></div></div>
+          </section>
+
+          <section class="section chapter" id="desafios" data-section>
+            <div class="chapter-heading"><span class="chapter-num">07 / DIFICULDADES E APRENDIZADO</span><span class="chapter-rule"></span><span class="chapter-type">O QUE NÃO APARECE NA TELA</span></div>
+            <div class="chapter-split"><div><h2>Nem tudo foi<br>resolvido na<br><i>primeira tentativa.</i></h2></div><div class="prose"><p>Uma parte importante do trabalho foi entender problemas que só apareceram quando as telas começaram a conversar entre si. Criar a interface isolada é uma etapa; fazer tudo funcionar quando a pessoa troca de viagem, abre formulários e volta para a navegação é outra.</p><p>Na tela de Gastos, por exemplo, surgiu uma falha relacionada ao ciclo de vida dos widgets do Flutter. Foi necessário testar a navegação separadamente, isolar a tela e revisar como o carregamento de dados acontecia. Esse tipo de investigação mostrou a importância de corrigir a causa, e não apenas esconder a mensagem de erro.</p><p>Outro ponto que exigiu atenção foi a organização dos dados no Supabase. O aplicativo precisava preservar os vínculos entre os registros e a viagem selecionada, além de trabalhar com permissões adequadas para cada conta.</p></div></div>
+            <div class="learning-strip"><div><span>APRENDIZADO 01</span><strong>Separar responsabilidades ajuda a encontrar erros.</strong></div><div><span>APRENDIZADO 02</span><strong>Uma interface pronta não significa que o fluxo inteiro esteja pronto.</strong></div><div><span>APRENDIZADO 03</span><strong>Persistência e segurança precisam entrar no projeto desde a estrutura dos dados.</strong></div></div>
+          </section>
+
+          <section class="section chapter" id="validacao" data-section>
+            <div class="chapter-heading"><span class="chapter-num">08 / VALIDAÇÃO</span><span class="chapter-rule"></span><span class="chapter-type">ANTES DE ENTREGAR</span></div>
+            <div class="section-intro"><div><h2>Funcionar no meu<br>celular é um começo.<br><i>Confiar é outro.</i></h2></div><p>Esta seção funciona como um roteiro de conferência. Os itens começam desmarcados de propósito: só devem ser assinalados depois de testados no aplicativo real.</p></div>
+            <div class="test-panel"><div class="test-heading"><div><span class="tiny-label">ROTEIRO DE TESTES</span><h3>Conferência final</h3></div><div class="test-progress"><strong id="testCount">0 / 8</strong><span>itens confirmados</span></div></div><div class="test-progress-bar"><span id="testProgressFill"></span></div><div class="test-list" id="testList">
+              <label class="test-item"><input type="checkbox" data-test="auth"><span class="check-visual"></span><span><strong>Conta e sessão</strong><small>Criar conta, entrar, sair e tentar recuperar a senha.</small></span></label>
+              <label class="test-item"><input type="checkbox" data-test="trip"><span class="check-visual"></span><span><strong>Viagens</strong><small>Criar, selecionar, editar e excluir uma viagem.</small></span></label>
+              <label class="test-item"><input type="checkbox" data-test="data"><span class="check-visual"></span><span><strong>Persistência</strong><small>Adicionar um registro, fechar o app e confirmar que ele continua lá.</small></span></label>
+              <label class="test-item"><input type="checkbox" data-test="navigation"><span class="check-visual"></span><span><strong>Navegação</strong><small>Abrir todas as abas e voltar sem falhas de interface.</small></span></label>
+              <label class="test-item"><input type="checkbox" data-test="finance"><span class="check-visual"></span><span><strong>Orçamento e gastos</strong><small>Confirmar soma, categorias, edição e valores restantes.</small></span></label>
+              <label class="test-item"><input type="checkbox" data-test="checklist"><span class="check-visual"></span><span><strong>Checklist e avaliações</strong><small>Adicionar, alterar, concluir e excluir conforme cada tela.</small></span></label>
+              <label class="test-item"><input type="checkbox" data-test="isolation"><span class="check-visual"></span><span><strong>Separação entre usuários</strong><small>Entrar com outra conta e verificar que não acessa dados alheios.</small></span></label>
+              <label class="test-item"><input type="checkbox" data-test="responsive"><span class="check-visual"></span><span><strong>Responsividade</strong><small>Verificar botões, textos e rolagem em tamanhos diferentes.</small></span></label>
+            </div><div class="test-bottom"><span>✓ Marque apenas o que você realmente testou.</span><button class="text-action" type="button" id="resetTests">Limpar marcações ↺</button></div></div>
+            <div class="evidence-area"><div><span class="tiny-label">EVIDÊNCIAS VISUAIS</span><h3>Espaço para prints reais do aplicativo</h3><p>Para complementar a apresentação, adicione capturas feitas no Android Studio ou no celular. Os arquivos podem ser selecionados aqui para visualizar e incluir na impressão em PDF.</p><small>Os prints escolhidos nesta página ficam neste navegador; para enviá-los junto com os arquivos do site, coloque as imagens na pasta <code>assets/</code> usando os nomes indicados no README.</small></div><div class="evidence-grid">
+                <label class="evidence-slot" data-slot="inicio"><img alt="Captura da tela inicial" hidden><span class="evidence-fallback"><span>+</span><strong>Tela inicial</strong><small>Adicionar captura</small></span><input type="file" accept="image/*" aria-label="Selecionar print da tela inicial"></label>
+                <label class="evidence-slot" data-slot="gastos"><img alt="Captura da tela de gastos" hidden><span class="evidence-fallback"><span>+</span><strong>Gastos</strong><small>Adicionar captura</small></span><input type="file" accept="image/*" aria-label="Selecionar print da tela de gastos"></label>
+                <label class="evidence-slot" data-slot="avaliacoes"><img alt="Captura da tela de avaliações" hidden><span class="evidence-fallback"><span>+</span><strong>Avaliações</strong><small>Adicionar captura</small></span><input type="file" accept="image/*" aria-label="Selecionar print da tela de avaliações"></label>
+              </div></div>
+          </section>
+
+          <section class="section chapter chapter-last" id="fechamento" data-section>
+            <div class="chapter-heading"><span class="chapter-num">09 / CONCLUSÃO</span><span class="chapter-rule"></span><span class="chapter-type">PRÓXIMOS PASSOS</span></div>
+            <div class="chapter-split"><div><h2>O projeto não<br>termina no <i>Run.</i></h2></div><div class="prose"><p>O WildLife reúne, em um mesmo aplicativo, diferentes necessidades do planejamento de viagens. A construção das telas, a organização do código e a integração com o Supabase ajudaram a transformar a proposta inicial em um projeto com fluxo de navegação, autenticação e persistência de dados.</p><p>Mais do que entregar páginas prontas, esse trabalho trouxe experiência com problemas comuns no desenvolvimento mobile: estado de interface, relacionamento entre registros, comunicação com serviços externos e ajustes que só aparecem durante o uso.</p><p>Como evolução, o aplicativo pode receber buscas de lugares com informações externas, mapas integrados e recursos mais avançados de planejamento. Essas possibilidades ficam para uma próxima etapa; não são apresentadas aqui como funções já finalizadas.</p></div></div>
+            <div class="closing-card"><span class="closing-stars">✳</span><div><span class="tiny-label">A IDEIA CONTINUA</span><h3>Menos abas abertas.<br>Mais viagem pela frente.</h3></div><a class="button button-gold" href="#inicio">Voltar ao início ↑</a></div>
+            <div class="references"><div><span class="tiny-label">DOCUMENTAÇÃO TÉCNICA</span><h3>Referências para consulta</h3></div><div class="reference-links"><a href="https://docs.flutter.dev/" target="_blank" rel="noopener noreferrer">Flutter Docs <span>↗</span></a><a href="https://dart.dev/guides" target="_blank" rel="noopener noreferrer">Dart Guides <span>↗</span></a><a href="https://supabase.com/docs" target="_blank" rel="noopener noreferrer">Supabase Docs <span>↗</span></a><a href="https://supabase.com/docs/guides/database/postgres/row-level-security" target="_blank" rel="noopener noreferrer">Row Level Security <span>↗</span></a></div></div>
+            <footer class="document-footer"><div class="footer-brand">WILD<span>LIFE</span><sup>✦</sup></div><div class="footer-credit"><strong id="footerAuthor">Autor(a): preencher</strong><span id="footerInstitution">Instituição: preencher</span><small>Relatório de desenvolvimento · 2026</small></div><button class="footer-print" type="button" id="printBottom">Imprimir / salvar como PDF ↗</button></footer>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="creditsModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-top"><span class="tiny-label">DADOS DA CAPA</span><button type="button" id="closeModal" class="modal-x" aria-label="Fechar">×</button></div>
+      <h2 id="modalTitle">Deixe o relatório com a sua assinatura.</h2>
+      <p>Preencha com suas informações reais. Elas aparecem no rodapé e ficam salvas apenas neste navegador.</p>
+      <form id="creditsForm"><label>Autor(a)<input type="text" id="authorInput" maxlength="90" placeholder="Seu nome completo" autocomplete="name"></label><label>Instituição / turma<input type="text" id="institutionInput" maxlength="130" placeholder="Escola, faculdade ou turma"></label><label>Disciplina / professor(a) <span>(opcional)</span><input type="text" id="teacherInput" maxlength="140" placeholder="Ex.: Desenvolvimento Mobile · Prof. ..."></label><div class="modal-actions"><button type="button" class="button button-outline" id="cancelModal">Cancelar</button><button type="submit" class="button button-gold">Salvar identificação ↗</button></div></form>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
